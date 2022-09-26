@@ -1,0 +1,133 @@
+body {
+    width: 90%;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+/****************    couleurs  ***************/
+/****************    Bleu : #0065FC   ***************/
+/****************    Bleu clair : #DEEBFF ***************/
+/****************    Gris : #F2F2F2  ***************/
+
+/****************    Header   ***************/
+
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav figure img {
+    width: 50%;
+    display: block;
+}
+
+nav .nav-links {
+
+
+    display: flex;
+}
+
+nav .nav-links a {
+    
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    width: 150px;
+    text-align: center;
+    line-height: 120px;
+    position: relative;
+
+}
+
+
+nav a:hover {
+    color: #0065FC;
+
+}
+
+nav div a:hover::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: #0065FC;
+    height: 3px;
+    display: block;
+}
+
+@media (max-width: 992px) {
+    body{
+        width:100%;
+    }
+    header nav {
+        flex-direction: column;
+    }
+
+    nav figure img {
+        margin: auto;
+    }
+
+    nav .nav-links {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    nav .nav-links a {
+        line-height: 70px;
+        width: 50%;
+    }
+
+    nav a:hover {
+        color: black;
+    }
+
+    nav a:focus {
+        color: #0065FC;
+    }
+
+    nav .nav-links a:hover::before {
+        display: none;
+    }
+
+    nav div a:focus::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        background-color: #0065FC;
+        height: 3px;
+        display: block;
+    }
+
+    nav div a:not(:focus)::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        background-color: #F2F2F2;
+        height: 3px;
+        display: block;
+    }
+}
+
+@media (max-width: 768) {}
+
+/****************    Search  ***************/
+
+form{
+    border:2px solid red;
+    width:40%;
+    height:50px;
+}
+form input{
+    
+    border:none;
+}
+form button{
+    background-color: unset;
+    border:none;
+}
