@@ -428,6 +428,8 @@ p,
 @media (max-width: 992px) {
     .hebergements-container {
         flex-direction: column;
+       
+       
     }
 
 
@@ -439,6 +441,7 @@ p,
         width: 100%;
         padding-bottom: 35px;
         background-color: #fff;
+        padding:0;
     }
 
     .populary-card {
@@ -468,21 +471,25 @@ p,
 
 
     /****************  Hébergements marseille 992px  ***************/
-
+    .hebergements-container{
+        margin: 0;
+    }
 
     .hebergements-container .marseille-container {
         order: 2;
         width: 100%;
         background-color: #fff;
+        padding:0;
     }
 
     .marseille-cards-container {
         flex-direction: column;
         align-items: center;
+
     }
 
     .marseille-card {
-        width: 90%;
+        width: 100%;
     }
 
     .marseille-card img {
