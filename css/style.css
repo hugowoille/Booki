@@ -1,4 +1,7 @@
-
+/*****   couleurs  ***************/
+/*****   Bleu : #0065FC   ***************/
+/*****   Bleu clair : #DEEBFF ***************/
+/*****   Gris : #F2F2F2  ***************/
 
 * {
     box-sizing: border-box;
@@ -14,14 +17,16 @@ a {
     text-decoration: none;
     color: black;
 }
-li{
+
+li {
     list-style: none;
 }
 
-/****************    couleurs  ***************/
-/****************    Bleu : #0065FC   ***************/
-/****************    Bleu clair : #DEEBFF ***************/
-/****************    Gris : #F2F2F2  ***************/
+.box-shadow {
+    -webkit-box-shadow: 0px 0px 28px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 28px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 28px -13px rgba(0, 0, 0, 0.75);
+}
 
 /****************    Header   ***************/
 
@@ -141,22 +146,77 @@ nav div a:hover::before {
 
 /****************  Search  ***************/
 
+
 form {
-    border: 2px solid red;
-    width: 40%;
+
+
     height: 50px;
+    display: flex;
+    border-radius: 20px;
+    max-width: 500px;
 }
 
 form input {
-
+    font-weight: 800;
     border: none;
+    color: black;
+    padding-left: 15px;
+    border-top: 2px solid #F2F2F2;
+    border-bottom: 2px solid #F2F2F2;
+    width: 100%;
+}
+
+form input::placeholder {
+    color: black;
 }
 
 form button {
     background-color: unset;
     border: none;
+    font-weight: 700;
+    color: white;
+    background-color: #0065FC;
+
+    border-radius: 0 20px 20px 0;
+
+    cursor: pointer;
 }
 
+form button i {
+    display: none !important;
+}
+
+form label {
+    display: flex;
+    align-items: center;
+    background-color: #F2F2F2;
+    border-radius: 20px 0 0 20px;
+    padding: 15px;
+
+}
+
+form label i {
+    font-size: 20px;
+
+}
+
+
+/****************  Search 992px  ***************/
+@media (max-width: 992px) {
+    form {}
+
+    form button {
+        padding: 0 25px;
+    }
+
+    form button i {
+        display: block !important;
+    }
+
+    form button p {
+        display: none;
+    }
+}
 
 
 /****************  Filters  ***************/
@@ -168,7 +228,8 @@ form button {
     font-weight: 800;
     align-items: center;
     margin: 30px 0;
-
+    max-width: 1000px;
+    gap: 20px;
 
 }
 
@@ -184,7 +245,7 @@ form button {
     height: 50px;
     align-items: center;
     text-decoration: none;
-    padding-right: 20px;
+
     color: black;
 
 
@@ -201,43 +262,30 @@ form button {
     text-align: center;
     line-height: 50px;
     transform: translateX(-2px);
-    margin-right: 20px;
+
     color: #0065FC;
 
 
 
 }
 
+.filters-container .filter div {
+    transition: all 0.5s;
+    display: block;
+    height: 100%;
+    line-height: 46px;
+    padding: 0 20px;
+}
 
 /****************  Filters:hover  ***************/
 
-
-.filters-container .filter:hover {
-    flex-direction: row-reverse;
-    padding-left: 20px;
-    padding-right: 0;
-    transition: all .5s;
-
+.filters-container .filter div:hover {
+    color: #0065FC;
+    transform: translateX(-10px);
 }
 
-.filters-container .filter:not(hover) {
 
-    transition: all .5s;
 
-}
-
-.filters-container .filter:hover i {
-    margin: 0;
-    padding: 0;
-    transform: translateX(2px);
-    transition: all .5s;
-}
-
-.filters-container .filter:not(hover) i {
-
-    transition: all .5s;
-
-}
 
 .infos i {
     color: #0065FC;
@@ -269,7 +317,7 @@ form button {
 .hebergements-container {
     display: flex;
     gap: 40px;
-    
+
     padding: 30px;
 }
 
@@ -298,18 +346,17 @@ form button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
+    row-gap: 30px;
     margin-bottom: 20px;
 }
+
 
 .marseille-card {
     width: 30%;
     background-color: white;
     border: 5px solid white;
-    border-radius: 25px;
-    -webkit-box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -334,25 +381,10 @@ p {
 
 }
 
-.marseille-card:nth-child(1) .star-container i:nth-child(5) {
+.marseille-card .star-container .star-grey {
     color: #d8d8d8;
 }
 
-.marseille-card:nth-child(3) .star-container i:nth-child(5) {
-    color: #d8d8d8;
-}
-
-.marseille-card:nth-child(4) .star-container i:nth-child(5) {
-    color: #d8d8d8;
-}
-
-.marseille-card:nth-child(4) .star-container i:nth-child(4) {
-    color: #d8d8d8;
-}
-
-.marseille-card:nth-child(5) .star-container i:nth-child(5) {
-    color: #d8d8d8;
-}
 
 /****************  Hébergements Les plus populaires  ***************/
 
@@ -380,12 +412,10 @@ p {
     flex-direction: row;
     background-color: white;
     border: 5px solid white;
-    border-radius: 25px;
+    border-radius: 30px;
     font-size: 13px;
     height: 160px;
-    -webkit-box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
+
 
 
 }
@@ -416,32 +446,47 @@ p,
     color: #0065FC;
 }
 
-.populary-card:nth-child(2) .star-container i:nth-child(5) {
+.populary-card .star-container .star-grey {
     color: #d8d8d8;
 }
 
-.populary-card:nth-child(3) .star-container i:nth-child(5) {
-    color: #d8d8d8;
+
+@media (max-width: 1300px) {
+    .marseille-cards-container {
+        justify-content: space-between;
+    }
+
+    .marseille-card {
+        width: 47%;
+    }
+
+    .populary-cards-container {
+        height: 100%;
+        justify-content: space-evenly;
+    }
 }
+
+
+
+
+
+/****************  Hébergements Les plus populaires 992px  ***************/
 
 @media (max-width: 992px) {
     .hebergements-container {
         flex-direction: column;
-       
-       
+
+
     }
-
-
-    /****************  Hébergements Les plus populaires 992px  ***************/
-
 
     .hebergements-container .populary-container {
         order: 1;
-        width: 100%;
+        width: 80%;
         padding-bottom: 35px;
         background-color: #fff;
-        padding:0;
+        padding: 0;
     }
+
 
     .populary-card {
         height: 200px;
@@ -470,15 +515,17 @@ p,
 
 
     /****************  Hébergements marseille 992px  ***************/
-    .hebergements-container{
+    .hebergements-container {
         margin: 0;
+
+        align-items: center;
     }
 
     .hebergements-container .marseille-container {
         order: 2;
-        width: 100%;
+        width: 80%;
         background-color: #fff;
-        padding:0;
+        padding: 0;
     }
 
     .marseille-cards-container {
@@ -492,10 +539,21 @@ p,
     }
 
     .marseille-card img {
-        height: 200px;
+        min-height: 200px;
     }
 }
 
+@media (max-width: 768px) {
+    .hebergements-container .populary-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hebergements-container .marseille-container {
+        width: 100%;
+    }
+}
 
 /****************  Activités à Marseille  ***************/
 
@@ -505,9 +563,11 @@ p,
     margin-bottom: 30px;
     padding: 30px;
 }
-.activities-container h2{
+
+.activities-container h2 {
     margin-bottom: 20px;
 }
+
 .activities-cards-container {
     display: flex;
     flex-direction: row;
@@ -517,9 +577,7 @@ p,
 .activities-card {
     width: 25%;
     border-radius: 25px;
-    -webkit-box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
+
     display: flex;
     flex-direction: column;
 }
@@ -544,9 +602,7 @@ p,
 }
 
 .duo-activities-card {
-    -webkit-box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: 7px 10px 26px -11px rgba(0, 0, 0, 0.75);
+
     display: flex;
     flex-direction: column;
     border-radius: 25px;
@@ -570,39 +626,50 @@ p,
 /****************  Activités à Marseille 992px  ***************/
 
 @media (max-width: 992px) {
-    .activities-cards-container{
+    .activities-cards-container {
         flex-direction: column;
-        padding:30px;
+        width: 80%;
+        margin: 0 auto;
     }
-    .activities-card, .duo-activities{
-        width:100%;
+
+    .activities-card,
+    .duo-activities {
+        width: 100%;
     }
-    .activities-card{
-       
+
+    .activities-card img,
+    .duo-activities img {
+        max-height: 150px;
+
     }
-    .activities-card, .duo-activities img{
-        height:300px;
-    }
-   
+
 }
 
+@media (max-width: 768px) {
+    .activities-cards-container {
+        width: 100%;
+    }
+}
 
 /****************  Footer  ***************/
 
-footer{
+footer {
     display: flex;
     flex-direction: row;
     background-color: #F2F2F2;
     padding: 30px;
 }
-.footer-links-container{
-    width:33.333%;
-    padding:0;
+
+.footer-links-container {
+    width: 33.333%;
+    padding: 0;
 }
-.footer-links-container h3{
+
+.footer-links-container h3 {
     margin-bottom: 30px;
 }
-.footer-links-container li{
+
+.footer-links-container li {
     margin-bottom: 10px;
 }
 
@@ -610,10 +677,11 @@ footer{
 
 
 @media (max-width: 992px) {
-    footer{
+    footer {
         flex-direction: column;
     }
-    .footer-links-container{
-        width:100%;
+
+    .footer-links-container {
+        width: 100%;
     }
 }
