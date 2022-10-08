@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> Bookli </title>
 
-  <!-- Meta description -->
+  <!---- Meta description ---->
 
   <meta name="description" content="Réservation en ligne d'hébergements">
 
 
-  <!-- Stylesheet -->
+  <!---- Stylesheet ---->
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Font-awesome -->
+  <!---- Font-awesome ---->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Font-Raleway -->
+  <!---- Font-Raleway ---->
 
   <link
     href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -36,24 +36,24 @@
 
 <body>
 
-  <!------------ header ------------->
+  <!---- header ---->
 
   <header>
     <nav>
       <figure><img src="images/logo/Booki.png" alt="logo de booki"></figure>
       <div class="nav-links">
-        <a href="#">Hébergements</a>
-        <a href="#">Activités</a>
+        <a href="#scroll-to-hebergements">Hébergements</a>
+        <a href="#scroll-to-activities">Activités</a>
       </div>
     </nav>
   </header>
 
-  <!------------ Main ------------->
+  <!---- Main ---->
 
   <main>
 
 
-    <!------------ search ------------->
+    <!---- search ---->
 
     <div class="entete">
       <h2>Trouvez votre hébergement pour desvacances de rêve</h2>
@@ -62,12 +62,12 @@
       <form class="search-input">
         <label for="search"><i class="fa-sharp fa-solid fa-location-dot"></i></label>
         <input type="text" name="search" required placeholder="Marseille, France">
-        <button><p>Rechercher</p><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button>Rechercher<i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
    
 
 
-      <!------------ Filter ------------->
+      <!---- Filter ---->
 
 
       <div class="filters-container">
@@ -93,14 +93,14 @@
       <p class="infos"><i class="fa-solid fa-info"></i>Plus de 500 logements sont disponibles dans cette ville</p>
     </div>
 
-    <!------------ Hebergements ------------->
+    <!---- Hebergements ---->
 
 
-    <section class="hebergements-container">
+    <section class="hebergements-container" id="scroll-to-hebergements">
       <article class="marseille-container">
 
 
-        <!------------ Hebergements à Marseille ------------->
+        <!---- Hebergements à Marseille ---->
 
 
         <h2>Hébergements à Marseille</h2>
@@ -182,7 +182,7 @@
       </article>
 
 
-      <!------------ Hebergements les plus populaires ------------->
+      <!---- Hebergements les plus populaires ---->
 
 
       <article class="populary-container">
@@ -235,10 +235,10 @@
     </section>
 
 
-    <!------------ Activités à marseille ------------->
+    <!---- Activités à marseille ---->
 
 
-    <article class="activities-container">
+    <article class="activities-container" id="scroll-to-activities">
       <h2>Activités à Marseille</h2>
       <section class="activities-cards-container">
         <a href="#" class="activities-card box-shadow">
@@ -274,18 +274,18 @@
   </main>
   <footer>
     <ul class="footer-links-container">
-      <h3>A propos</h3>
+      <li class="title-footer">A propos</li>
       <li><a href="">Fonctionnement du site</a></li>
       <li><a href="">Condition générales de vente</a></li>
       <li><a href="">Données et confidentialité</a></li>
     </ul>
     <ul class="footer-links-container">
-      <h3>Nos hébergements</h3>
+      <li class="title-footer">Nos hébergements</li>
       <li><a href="">Charte qualité</a></li>
       <li><a href="">Soumettre votre hôtel</a></li>
     </ul>
     <ul class="footer-links-container">
-      <h3>Assistance</h3>
+      <li class="title-footer">Assistance</li>
       <li><a href="">Centre d'aides</a></li>
       <li><a href="">Nous contacter</a></li>
     </ul>
