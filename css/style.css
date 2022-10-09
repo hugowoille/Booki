@@ -322,7 +322,6 @@ form label i {
 .hebergements-container {
     display: flex;
     gap: 40px;
-
     padding: 30px;
 }
 
@@ -403,6 +402,10 @@ p {
     padding: 25px;
     justify-content: flex-start;
 }
+.populary-container h2{
+    display:flex;
+    justify-content: space-between;
+}
 
 .populary-cards-container {
 
@@ -470,7 +473,7 @@ p,
         justify-content: space-evenly;
     }
     .populary-card{
-        height:220px;
+        min-height:220px;
     }
     .populary-card img{
         width:55%;
@@ -500,11 +503,13 @@ p,
 
 
     .populary-card {
-        height: 200px;
+        min-height: 200px;
     }
-
+    .populary-card img{
+        width:45%;
+    }
     .populary-text-content {
-        padding-left: 15px;
+        padding-left: 5px;
         justify-content: space-evenly;
     }
 
@@ -540,13 +545,15 @@ p,
     }
 
     .marseille-cards-container {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
     }
 
     .marseille-card {
-        width: 100%;
+        width: 48%;
     }
 
     .marseille-card img {
@@ -563,6 +570,12 @@ p,
 @media (max-width: 768px) {
     .hebergements-container .marseille-container {
         width: 100%;
+    }
+    .marseille-cards-container{
+        flex-direction: column;
+    }
+    .marseille-card{
+        width:100%;
     }
 }
 
