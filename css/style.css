@@ -187,6 +187,9 @@ form button {
 form button i {
     display: none !important;
 }
+form button::before{
+    content:"Rechercher"
+}
 
 form label {
     display: flex;
@@ -215,6 +218,9 @@ form label i {
 
     form button i {
         display: block !important;
+    }
+    form button::before{
+        display:none;
     }
 
     form button p {
@@ -561,11 +567,15 @@ p,
     }
 }
 
+    /****  Hébergements populary 768px  ****/
+
 @media (max-width: 768px) {
     .hebergements-container .populary-container {
         width: 100%;
     }
 }
+
+    /****  Hébergements Marseille 768px  ****/
 
 @media (max-width: 768px) {
     .hebergements-container .marseille-container {
@@ -637,10 +647,8 @@ p,
     flex-grow: 1;
     
 }
-#pomegues h3{
+#pomegues img{
     flex-grow: 1;
-    display: flex;
-    align-items: center;
 }
 .duo-activities img {
     width: 100%;
@@ -677,6 +685,8 @@ p,
     }
 
 }
+
+/****  Activités à Marseille 768px  ****/
 
 @media (max-width: 768px) {
     .activities-cards-container {
