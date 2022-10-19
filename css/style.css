@@ -105,7 +105,7 @@ nav div a:hover::before {
         color: black;
     }
 
-    nav a:focus {
+    nav a:hover {
         color: #0065FC;
     }
 
@@ -113,7 +113,7 @@ nav div a:hover::before {
         display: none;
     }
 
-    nav div a:focus::after {
+    nav div a:hover::after {
         content: "";
         position: absolute;
         width: 100%;
@@ -122,7 +122,7 @@ nav div a:hover::before {
         display: block;
     }
 
-    nav div a:not(:focus)::after {
+    nav div a:not(:hover)::after {
         content: "";
         position: absolute;
         width: 100%;
@@ -130,6 +130,7 @@ nav div a:hover::before {
         height: 3px;
         display: block;
     }
+    
 }
 
 
@@ -137,11 +138,13 @@ nav div a:hover::before {
 
 .entete {
     padding: 30px;
+    padding-bottom: 0;
 }
 
 @media (max-width: 992px) {
     .entete {
         padding: 20px;
+        
     }
 
 }
@@ -179,23 +182,20 @@ form button {
     color: white;
     background-color: #0065FC;
 
-    border-radius: 0 20px 20px 0;
-
+    border-radius: 0 15px 15px 0;
+    padding:0 20px;
     cursor: pointer;
 }
 
 form button i {
     display: none !important;
 }
-form button::before{
-    content:"Rechercher"
-}
 
 form label {
     display: flex;
     align-items: center;
     background-color: #F2F2F2;
-    border-radius: 20px 0 0 20px;
+    border-radius: 15px 0 0 15px;
     padding: 15px;
 
 }
@@ -225,6 +225,14 @@ form label i {
 
     form button p {
         display: none;
+    }
+    form button span{
+        display:none;
+    }
+    form button{
+        border-radius: 15px 15px 15px 15px;
+        transform: translateX(-10px);
+        padding:0 20px;
     }
 }
 
@@ -447,15 +455,17 @@ p {
 }
 
 .populary-card h3,
-p,
 .star-container {
     padding: 10px;
     margin: 0;
 }
+.populary-card p{
+    padding:0;
+    padding-left: 10px;
+}
 
 .populary-card .star-container {
-    flex-grow: 1;
-    padding: 30px 0 0 10px;
+    margin-top: 40px;
     justify-self: flex-end;
     color: #0065FC;
 }
@@ -570,8 +580,17 @@ p,
     /****  Hébergements populary 768px  ****/
 
 @media (max-width: 768px) {
+    .hebergements-container{
+        width:100%;
+        padding:0;
+
+    }
     .hebergements-container .populary-container {
         width: 100%;
+        background-color:#F2F2F2 ;
+        border-radius: unset;
+        width:100%;
+        padding:30px;
     }
 }
 
@@ -580,6 +599,7 @@ p,
 @media (max-width: 768px) {
     .hebergements-container .marseille-container {
         width: 100%;
+        padding:30px;
     }
     .marseille-cards-container{
         flex-direction: column;
